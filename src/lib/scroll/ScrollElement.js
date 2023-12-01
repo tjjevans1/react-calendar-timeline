@@ -54,7 +54,7 @@ class ScrollElement extends Component {
 
       // convert vertical zoom to horiziontal
       this.props.onWheelZoom(speed, xPosition, e.deltaY)
-    } else if (e.shiftKey) {
+    } else if (e.shiftKey || e.deltaX) {
       e.preventDefault()
       // shift+scroll event from a touchpad has deltaY property populated; shift+scroll event from a mouse has deltaX
       this.props.onScroll(this.scrollComponent.scrollLeft + (e.deltaY || e.deltaX))
